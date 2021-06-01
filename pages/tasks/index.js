@@ -1,10 +1,12 @@
 function AllTasks() {
+
     return(
-        <div>
+        <di>
             <h1>All Tasks</h1>
-            <p>Current tasks within the production workflow. Please check.</p>
-        </div>
-    );
+            <p>Please use the filter to search by Task Status.</p>
+        </di>
+    )
+
 }
 
 export default AllTasks;

@@ -1,24 +1,18 @@
-import Link from 'next/link';
+import { getHotListTasks } from '../dummy-data';
+import TaskList from '../components/tasks/task-list';
 
-function Dashboard() {
+function HotList() {
 
-
+    const hotListTasks = getHotListTasks();
 
     return(
         <div>
-            <h1>Performance Dashboard</h1>
-            <p>Check out what's going on in Production today.</p>
-            <ul>
-                <li>
-                    <Link href='/tasks'>All Tasks</Link>
-                </li>
-                <li>
-                    <Link href='/tasks/my-tasks'>My Tasks</Link>
-                </li>
-            </ul>
+            <h1>Hot Tasks</h1>
+            <p>These tasks should be handled with top priority.</p>
+            <TaskList items={hotListTasks} />
         </div>
     );
 
 }
 
-export default Dashboard;
+export default HotList;
