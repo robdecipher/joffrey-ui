@@ -1,0 +1,6 @@
+.header{ position:fixed;left:0;top:0;bottom:0;display:flex;flex-direction:column;height:100%;width:8rem;background:#0e1111; }
+.brand h2, .header { color:#fff; }
+.brand, .navfooter { min-height:8rem; }
+.brand, .globalnav, .navfooter { display:flex;justify-content:center; }
+.globalnav { height:100%; }
+.globalnav ul { text-align:center;}

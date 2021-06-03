@@ -29,7 +29,7 @@ const DUMMY_TASKS = [
         site: 'ZA',
         duedate: '2021-06-01',
         status: 'AEM WORKFLOW IN PROGRESS',
-        isHotList: false,
+        isHotList: true,
     },
     {
         id: 'WSC20200026-2239',
@@ -53,7 +53,7 @@ const DUMMY_TASKS = [
     const status = statusFilter;
   
     let filteredTasks = DUMMY_TASKS.filter((task) => {
-      const taskStatus = task.status;
+      const taskStatus = task.status.toLowerCase();
       return taskStatus === status;
     });
   

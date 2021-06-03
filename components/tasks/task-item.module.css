@@ -1,0 +1,8 @@
+.card { padding:1.8rem 1rem;display:flex;align-items:center;background-color:#fff;margin-bottom:0.4rem;border-radius:5px;box-shadow:0 7px 30px -10px rgba(150,170,180,0.5); }
+.task { margin:0 1rem;text-align:center; }
+.taskid { width:25%; }
+.tasksite { width:10%; }
+.taskstatus { width:20%; }
+.tasksummary { width:100%;text-align:left; }
+.taskduedate { width:20%; }
+.btn {width:20%;}
