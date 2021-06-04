@@ -4,3 +4,5 @@
 .brand, .globalnav, .navfooter { display:flex;justify-content:center; }
 .globalnav { height:100%; }
 .globalnav ul { text-align:center;}
+.globalnav ul li { margin-bottom:1.6rem; }
+.globalnav svg { width:2.4rem;height:2.4rem;display:block;text-align:center;margin:0 auto;margin-bottom:0.4rem;}

@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import { Fragment } from 'react'; 
 
 import classes from './main-navigation.module.css';
+import FireIcon from '../icons/fire';
+import WorkIcon from '../icons/work';
 
 function MainNavigation() {
 
@@ -12,10 +15,20 @@ function MainNavigation() {
             <nav className={classes.globalnav}>
                 <ul>
                     <li>
-                        <Link href='/'>Hot List</Link>
+                        <Link href='/'>
+                            <Fragment>
+                                <FireIcon />
+                                <span>Hot List</span>
+                            </Fragment>
+                        </Link>
                     </li>
                     <li>
-                        <Link href='/tasks'>All Tasks</Link>
+                        <Link href='/tasks'>
+                            <Fragment>
+                                <WorkIcon />
+                                <span>All Tasks</span>
+                            </Fragment>
+                        </Link>
                     </li>
                 </ul>
             </nav>
