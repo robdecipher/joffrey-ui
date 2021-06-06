@@ -16,18 +16,18 @@ function MainNavigation() {
                 <ul>
                     <li>
                         <Link href='/'>
-                            <Fragment>
+                            <div>
                                 <FireIcon />
                                 <span>Hot List</span>
-                            </Fragment>
+                            </div>
                         </Link>
                     </li>
                     <li>
                         <Link href='/tasks'>
-                            <Fragment>
+                            <div>
                                 <WorkIcon />
                                 <span>All Tasks</span>
-                            </Fragment>
+                            </div>
                         </Link>
                     </li>
                 </ul>

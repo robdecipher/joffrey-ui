@@ -4,5 +4,7 @@
 .brand, .globalnav, .navfooter { display:flex;justify-content:center; }
 .globalnav { height:100%; }
 .globalnav ul { text-align:center;}
-.globalnav ul li { margin-bottom:1.6rem; }
-.globalnav svg { width:2.4rem;height:2.4rem;display:block;text-align:center;margin:0 auto;margin-bottom:0.4rem;}
+.globalnav ul li { margin-bottom:1.6rem;font-weight:500;text-transform:uppercase;font-size:0.7rem;letter-spacing:0.12rem; }
+.globalnav div { flex-wrap:wrap;}
+.globalnav svg { width:2.4rem;height:2.4rem;display:block;text-align:center;margin:0 auto;margin-bottom:0.6rem;}
+.globalnav span { width:100%; }
