@@ -15,7 +15,7 @@ function MainNavigation() {
             <nav className={classes.globalnav}>
                 <ul>
                     <li>
-                        <Link href='/'>
+                        <Link href='/tasks/hotlist'>
                             <div>
                                 <FireIcon />
                                 <span>Hot List</span>
