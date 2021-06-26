@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Fragment } from 'react'; 
 
 import classes from './main-navigation.module.css';
 import FireIcon from '../icons/fire';
@@ -15,7 +14,7 @@ function MainNavigation() {
             <nav className={classes.globalnav}>
                 <ul>
                     <li>
-                        <Link href='/tasks/hotlist'>
+                        <Link href='/tasks/hotlist/'>
                             <div>
                                 <FireIcon />
                                 <span>Hot List</span>
