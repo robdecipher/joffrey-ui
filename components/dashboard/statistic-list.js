@@ -1,4 +1,5 @@
 import StatisticItem from './statistic-item';
+import classes from './statistic-list.module.css';
 
 function StatisticList(props) {
 
@@ -6,8 +7,8 @@ function StatisticList(props) {
 
     return(
         <div>
-            <ul>
-                {stats.map((stat => <StatisticItem value={stat.value} />))}
+            <ul className={classes.statwrapper}>
+                {stats.map((stat => <StatisticItem name={stat.name} value={stat.value} link={stat.link} />))}
             </ul>
         </div>
     )

@@ -27,7 +27,7 @@ function HotList() {
 
 }
 
-/*export async function getStaticProps() {
+export async function getStaticProps() {
     const res = await fetch('https://op-jra.samsung.com/rest/api/2/search?jql=' + query, {
         headers: {
             'Authorization': auth,
@@ -48,6 +48,6 @@ function HotList() {
     return {
         props: { data },
     }
-}*/
+}
 
 export default HotList;

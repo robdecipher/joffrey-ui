@@ -43,7 +43,10 @@ export async function getAllOpenTasks() {
 
 }
 
-export async function getOverdueTasks() {
+export async function getStatistics() {
+
+    const allStatistics = [];
+
     let today = new Date();
     let dd = today.getDate();
     let mm = today.getMonth() + 1;
@@ -55,30 +58,31 @@ export async function getOverdueTasks() {
         mm = '0' + mm;
     }
     today = yyyy + '-' + mm + '-' + dd;
+
     const allOpenTasks = await getAllOpenTasks();
-    let filteredByDueDate  = allOpenTasks.filter((task) => {
+    let overdueTasks  = allOpenTasks.filter((task) => {
         const duedate = task.fields.duedate;
-        console.log(task.key)
-        console.log(duedate);
-        console.log(today, '\n');
         return duedate <= today;
     });
-    console.log(query);
-    console.log(allOpenTasks.length);
-    console.log(filteredByDueDate.length);
-    return filteredByDueDate;
 
-}
-
-export async function getStatistics() {
-    const allStatistics = [];
-    const allTasks = await getAllOpenTasks();
-    const overdueTasks = await getOverdueTasks();
     allStatistics.push({
-        value: allTasks.length
+        name: 'Total Open Tasks',
+        value: allOpenTasks.length,
+        link: '#'
     }, {
-        value: overdueTasks.length
-    }
-    );
+        name: 'Overdue Tasks',
+        value: overdueTasks.length,
+        link: '#'
+    }, {
+        name: 'New Tasks Today',
+        value: '15',
+        link: '#'
+    }, {
+        name: 'Completed Today',
+        value: '8',
+        link: '#'
+    });
+
     return allStatistics;
+
 }
