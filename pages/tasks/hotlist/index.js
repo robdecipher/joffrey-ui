@@ -13,6 +13,7 @@ const query = 'category="[WSC] Local" AND "Request Type" in ("Local Request: Loc
 function HotList() {
 
     const hotListTasks = getHotListTasks();
+    console.log(hotListTasks);
 
     return(
         <section>
@@ -26,7 +27,7 @@ function HotList() {
 
 }
 
-export async function getStaticProps() {
+/*export async function getStaticProps() {
     const res = await fetch('https://op-jra.samsung.com/rest/api/2/search?jql=' + query, {
         headers: {
             'Authorization': auth,
@@ -47,6 +48,6 @@ export async function getStaticProps() {
     return {
         props: { data },
     }
-}
+}*/
 
 export default HotList;

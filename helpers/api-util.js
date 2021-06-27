@@ -69,3 +69,16 @@ export async function getOverdueTasks() {
     return filteredByDueDate;
 
 }
+
+export async function getStatistics() {
+    const allStatistics = [];
+    const allTasks = await getAllOpenTasks();
+    const overdueTasks = await getOverdueTasks();
+    allStatistics.push({
+        value: allTasks.length
+    }, {
+        value: overdueTasks.length
+    }
+    );
+    return allStatistics;
+}

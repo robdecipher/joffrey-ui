@@ -1,15 +1,17 @@
 import { getOverdueTasks } from '../helpers/api-util';
-import TaskList from '../components/tasks/task-list';
+import { getStatistics } from '../helpers/api-util';
+import StatisticList from '../components/dashboard/statistic-list';
 
 function HomePage(props) {
 
+    console.log(props);
     return(
         <div>
             <div>
                 <h1>Performance Dashboard</h1>
             </div>
             <div>
-                <TaskList items={props.tasks} />
+                <StatisticList stats={props.stats} />
             </div>
         </div>
     );
@@ -18,11 +20,13 @@ function HomePage(props) {
 
 export async function getStaticProps() {
 
-    const overdueTasks = await getOverdueTasks();
+    const overdueTasks = await getOverdueTasks()
+    const allStatistics = await getStatistics();
+    console.log(allStatistics);
     
     return {
         props: {
-            tasks: overdueTasks 
+            stats: allStatistics 
         }
     }
 
