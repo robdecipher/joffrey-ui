@@ -4,7 +4,6 @@ import StatisticList from '../components/dashboard/statistic-list';
 
 function HomePage(props) {
 
-    console.log(props);
     return(
         <section>
             <div className='page-header'>
@@ -19,9 +18,7 @@ function HomePage(props) {
 
 export async function getStaticProps() {
 
-    //const overdueTasks = await getOverdueTasks()
     const allStatistics = await getStatistics();
-    console.log(allStatistics);
     
     return {
         props: {

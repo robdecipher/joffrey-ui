@@ -8,7 +8,7 @@ function StatisticList(props) {
     return(
         <div>
             <ul className={classes.statwrapper}>
-                {stats.map((stat => <StatisticItem name={stat.name} value={stat.value} link={stat.link} />))}
+                {stats.map((stat => <StatisticItem key={stat.key} name={stat.name} value={stat.value} link={stat.link} />))}
             </ul>
         </div>
     )

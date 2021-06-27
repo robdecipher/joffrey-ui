@@ -10,7 +10,7 @@ const category = 'category = "[WSC] Local" AND "Request Type" in ("Local Request
 const status = 'status not in (Resolved, Closed, Cancelled, LIVE, Complete)';
 const strip = 'summary !~ "global request*" AND issuetype not in ("PDP Task(automatic)")';
 const wpc = 'WPC = PL';
-const fields = 'fields=id,key,status,customfield_13611,assignee,duedate';
+const fields = 'fields=id,key,status,customfield_13611,assignee,duedate,created';
 const maxResults = 'maxResults=5000';
 
 const query = baseUrl + category + ' AND ' + status + ' AND ' + strip + ' AND ' + wpc + '&' + maxResults + '&' + fields;
@@ -25,10 +25,8 @@ export async function getAllOpenTasks() {
     });
 
     const data = await response.json();
-    console.log(data.total);
 
     const unpacked = data.issues;
-    //console.log(unpacked[0]);
     
     const openTasks = [];
 
@@ -65,6 +63,11 @@ export async function getStatistics() {
         return duedate <= today;
     });
 
+    let newTasks = allOpenTasks.filter((task) => {
+        let createddate = task.fields.created.slice(0,10);
+        return createddate === today;
+    })
+
     allStatistics.push({
         name: 'Total Open Tasks',
         value: allOpenTasks.length,
@@ -75,7 +78,7 @@ export async function getStatistics() {
         link: '#'
     }, {
         name: 'New Tasks Today',
-        value: '15',
+        value: newTasks.length,
         link: '#'
     }, {
         name: 'Completed Today',
