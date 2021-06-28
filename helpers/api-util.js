@@ -5,6 +5,7 @@ const pw = 'Un1C0rN$';
 
 const auth = 'Basic ' + base64.encode(user + ":" + pw);
 
+// Open Tasks API Builder
 const baseUrl = 'https://op-jra.samsung.com/rest/api/2/search?jql=';
 const category = 'category = "[WSC] Local" AND "Request Type" in ("Local Request: Local to WSC Production Center Request", "Global Request: HQ Lead Production")';
 const status = 'status not in (Resolved, Closed, Cancelled, LIVE, Complete)';
@@ -14,6 +15,14 @@ const fields = 'fields=id,key,status,customfield_13611,assignee,duedate,created'
 const maxResults = 'maxResults=5000';
 
 const query = baseUrl + category + ' AND ' + status + ' AND ' + strip + ' AND ' + wpc + '&' + maxResults + '&' + fields;
+
+// Completed Today API Builder
+const completeStatus = 'status = Closed';
+const completeDate = 'resolutiondate >= startOfDay()';
+const completeFields = 'fields=id,key,status,resolutiondate';
+
+const completeQuery = baseUrl + category + ' AND ' + completeStatus + ' AND ' + strip + ' AND ' + wpc + ' AND ' + completeDate + '&' + completeFields;
+console.log(completeQuery);
 
 export async function getAllOpenTasks() {
 
@@ -41,6 +50,20 @@ export async function getAllOpenTasks() {
 
 }
 
+export async function getCompletedTasks() {
+
+    const response = await fetch(completeQuery, {
+        headers: {
+            'Authorization': auth,
+            'Content-Type': 'application/json'
+        }
+    });
+
+    const data = await response.json();
+    return data;
+
+}
+
 export async function getStatistics() {
 
     const allStatistics = [];
@@ -58,6 +81,9 @@ export async function getStatistics() {
     today = yyyy + '-' + mm + '-' + dd;
 
     const allOpenTasks = await getAllOpenTasks();
+    const allCompletedTasks = await getCompletedTasks();
+    console.log(allCompletedTasks);
+
     let overdueTasks  = allOpenTasks.filter((task) => {
         const duedate = task.fields.duedate;
         return duedate <= today;
@@ -82,7 +108,7 @@ export async function getStatistics() {
         link: '#'
     }, {
         name: 'Completed Today',
-        value: '8',
+        value: allCompletedTasks.total,
         link: '#'
     });
 
