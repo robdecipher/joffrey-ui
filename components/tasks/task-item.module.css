@@ -2,7 +2,7 @@
 .task { margin:0 1rem;text-align:center; }
 .taskid { width:25%; }
 .tasksite { width:10%; }
-.taskstatus { width:20%; }
+.taskstatus { width:25%; }
 .tasksummary { width:100%;text-align:left; }
 .taskduedate { width:20%; }
-.btn {width:20%;}
+.card a { width:20% }

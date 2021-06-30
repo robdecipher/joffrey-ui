@@ -11,7 +11,7 @@ const category = 'category = "[WSC] Local" AND "Request Type" in ("Local Request
 const status = 'status not in (Resolved, Closed, Cancelled, LIVE, Complete)';
 const strip = 'summary !~ "global request*" AND issuetype not in ("PDP Task(automatic)")';
 const wpc = 'WPC = PL';
-const fields = 'fields=id,key,status,customfield_13611,assignee,duedate,created';
+const fields = 'fields=id,key,status,customfield_13611,assignee,duedate,created,summary';
 const maxResults = 'maxResults=5000';
 
 const query = baseUrl + category + ' AND ' + status + ' AND ' + strip + ' AND ' + wpc + '&' + maxResults + '&' + fields;

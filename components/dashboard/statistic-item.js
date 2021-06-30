@@ -5,7 +5,7 @@ import StatBox from '../ui/statBox';
 
 function StatisticItem(props) {
 
-    const { name, value, link, statclass } = props
+    const { name, value, link } = props
     return(
         <li className={classes.statboxwrapper}>
             <StatBox>

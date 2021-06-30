@@ -1,5 +1,4 @@
-import Button from '../ui/button';
-import ExternalIcon from '../icons/external';
+import ButtonLinkExternal from '../ui/button-link-external';
 import classes from './task-item.module.css';
 
 function TaskItem(props) {
@@ -15,10 +14,9 @@ function TaskItem(props) {
                 <span className={classes.task + " " + classes.taskstatus}>{status}</span>
                 <span className={classes.task + " " + classes.tasksummary}>{summary}</span>
                 <span className={classes.task + " " + classes.taskduedate}>{duedate}</span>
-                <Button link={viewTaskLink}>
-                    <span>View Task</span>
-                    <span><ExternalIcon /></span>
-                </Button>
+                <ButtonLinkExternal link={viewTaskLink}>
+                    <span>View in JIRA</span>
+                </ButtonLinkExternal>
             </div>
         </li>
     );
