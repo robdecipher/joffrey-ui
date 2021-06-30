@@ -22,7 +22,7 @@ function MainNavigation() {
                         </Link>
                     </li>
                     <li>
-                        <Link href='/my-tasks'>
+                        <Link href='/tasks'>
                             <div>
                                 <WorkIcon />
                                 <span>My Tasks</span>

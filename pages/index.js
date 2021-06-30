@@ -1,5 +1,5 @@
 //import { getOverdueTasks } from '../helpers/api-util';
-import { getStatistics } from '../helpers/api-util';
+import { getStatistics } from '../helpers/api-stats';
 import StatisticList from '../components/dashboard/statistic-list';
 
 function HomePage(props) {
