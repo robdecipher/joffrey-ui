@@ -1,1 +1,3 @@
-.linkbutton { font-weight:500;text-transform:uppercase;font-size:1rem;letter-spacing:0.12rem;color:blue; }
+.linkbutton { font-weight:500;text-transform:uppercase;font-size:0.8rem;letter-spacing:0.12rem;color:blue;width:100%; }
+.linkbutton div { justify-content:flex-end; }
+.linkbutton svg { width:1.2rem;height:1.2rem;margin-left:0.4rem; }

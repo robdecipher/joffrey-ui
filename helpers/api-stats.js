@@ -19,6 +19,7 @@ export async function getStatistics() {
 
     const allOpenTasks = await getAllOpenTasks();
     const allCompletedTasks = await getCompletedTasks();
+    console.log(allCompletedTasks);
 
     let overdueTasks  = allOpenTasks.filter((task) => {
         const duedate = task.fields.duedate;

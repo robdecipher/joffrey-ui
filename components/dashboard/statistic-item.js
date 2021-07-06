@@ -2,6 +2,7 @@ import ButtonLinkExternal from '../ui/button-link-external';
 
 import classes from './statistic-item.module.css';
 import StatBox from '../ui/statBox';
+import ArrowRight from '../icons/arrow-right';
 
 function StatisticItem(props) {
 
@@ -12,7 +13,10 @@ function StatisticItem(props) {
                 <h3 className={classes.statname}>{name}</h3>
                 <span className={classes.statvalue}>{value}</span>
                 <ButtonLinkExternal link={link}>
-                    <span>View in JIRA</span>
+                    <div>
+                        <span>View Tasks</span>
+                        <ArrowRight />
+                    </div>
                 </ButtonLinkExternal>
             </StatBox>
         </li>
