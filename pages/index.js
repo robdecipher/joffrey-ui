@@ -22,7 +22,8 @@ export async function getStaticProps() {
     return {
         props: {
             stats: allStatistics 
-        }
+        },
+        revalidate: 60
     }
 
 }
