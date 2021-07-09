@@ -1,12 +1,17 @@
 import { dbConnection } from '../../../helpers/db';
 import { hashPassword } from '../../../helpers/auth';
 
-async function handler(req,res) {
+async function handler(req, res) {
+
+    if(req.method !== 'POST') {
+        return;
+    }
+    console.log('passed');
 
     const data = req.body;
     const { email, password } = data;
 
-    if(!email || !email.includes('@') || !password || !password.trim().length < 7) {
+    if(!email || !email.includes('@') || !password || password.trim().length < 7) {
         res.status(422).json({ message: 'Invalid input' });
         return;
     }
