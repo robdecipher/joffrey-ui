@@ -16,13 +16,13 @@ function MyTasks(props) {
 
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     const allOpenTasks = await getAllOpenTasks();
     
     return {
         props: {
-            tasks: allOpenTasks 
+            tasks: allOpenTasks
         }
     }
 
