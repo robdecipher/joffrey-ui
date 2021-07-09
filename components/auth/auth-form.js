@@ -35,9 +35,7 @@ function AuthForm() {
         event.preventDefault();
 
         const enteredEmail = emailInputRef.current.value;
-        console.log(enteredEmail);
         const enteredPassword = pwInputRef.current.value;
-        console.log(enteredPassword);
 
         if(isLogin) {
             // Authenticate the User
