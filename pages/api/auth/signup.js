@@ -6,7 +6,6 @@ async function handler(req, res) {
     if(req.method !== 'POST') {
         return;
     }
-    console.log('passed');
 
     const data = req.body;
     const { email, password } = data;
