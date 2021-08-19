@@ -1,0 +1,8 @@
+.formwrapper { display:flex;flex-direction:column;padding:2rem 8rem; }
+.formwrapper h2 { margin-bottom:2.1rem; }
+.fieldwrapper { flex-direction:column;align-items:flex-start;min-width:20rem;margin-bottom:2.1rem; }
+.formlabel { font-size:0.8rem;color:#000;text-transform:uppercase;letter-spacing:0.055rem;margin-bottom:1.6rem; }
+.forminput { width:100%;margin-bottom:1rem;border:0;border-bottom:1px solid #d0d0d0;padding:0.4rem 0.2rem;font-size:1rem; }
+.forminput:focus { outline:none; }
+.formsubmit { width:100%;padding:1rem 0.4rem;color:#fff;background:#1223c2;border:0;text-transform:uppercase;font-size:1rem;font-weight:500;letter-spacing:0.107rem;}
+.authmode { margin-top:5rem;justify-content:center; }

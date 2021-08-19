@@ -7,6 +7,14 @@
   padding:0;
 }
 
+html, body {
+  height:100%;
+}
+
+div#__next {
+  min-height:100%;
+}
+
 body {
   color:#424242;
   -webkit-font-smoothing:antialiased;
@@ -63,3 +71,5 @@ a {
   font-size:1rem;
   line-height:1.5rem;
 }
+
+.txtbtn { border:0;background:transparent;cursor:pointer;color:#1223c2;font-size:1rem; }

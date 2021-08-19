@@ -1,7 +1,10 @@
 import { useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/client';
+
+import Tile from '../ui/Tile';
 import classes from './auth-form.module.css';
+
 
 async function createUser(email, password) {
     const response = await fetch('/api/auth/signup', {
@@ -65,23 +68,29 @@ function AuthForm() {
     return(
 
         <section>
-            <h2>{isLogin ? 'Login' : 'Sign-Up'}</h2>
-            <form onSubmit={submitHandler}>
-                <div>
-                    <label htmlFor='email'>Email</label>
-                    <input type='email' id='email' required ref={emailInputRef} />
+            <Tile>
+                <div class={classes.formwrapper}>
+                    <h2>{isLogin ? 'Login' : 'Sign-Up'}</h2>
+                    <form onSubmit={submitHandler}>
+                        <div class={classes.fieldwrapper}>
+                            <label htmlFor='email' class={classes.formlabel}>Email</label>
+                            <input type='email' id='email' required class={classes.forminput} ref={emailInputRef} />
+                        </div>
+                        <div class={classes.fieldwrapper}>
+                            <label htmlFor='password' class={classes.formlabel}>Password</label>
+                            <input type='password' id='password' required class={classes.forminput} ref={pwInputRef} />
+                        </div>
+                        <div class={classes.fieldwrapper}>
+                            <button type='submit' class={classes.formsubmit}>{isLogin ? 'Login' : 'Create Account'}</button>
+                        </div>
+                        <div class={classes.authmode}>
+                            <button type='button' className={`toggle txtbtn`} onClick={switchAuthModeHandler}>
+                                {isLogin? 'Create new Account' : 'Login with existing Account'}
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <label htmlFor='password'>Password</label>
-                    <input type='password' id='password' required ref={pwInputRef} />
-                </div>
-                <div>
-                    <button>{isLogin ? 'Login' : 'Create Account'}</button>
-                    <button type='button' className={classes.toggle} onClick={switchAuthModeHandler}>
-                        {isLogin? 'Create new Account' : 'Login with existing Account'}
-                    </button>
-                </div>
-            </form>
+            </Tile>
         </section>
 
     )

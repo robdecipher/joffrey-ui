@@ -22,6 +22,7 @@ const completeDate = 'resolutiondate >= startOfDay()';
 const completeFields = 'fields=id,key,status,resolutiondate';
 
 const completeQuery = baseUrl + category + ' AND ' + completeStatus + ' AND ' + strip + ' AND ' + wpc + ' AND ' + completeDate + '&' + maxResults + '&' + completeFields;
+console.log(completeQuery);
 
 export async function getAllOpenTasks() {
 
