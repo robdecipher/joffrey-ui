@@ -1,10 +1,10 @@
-.header{ position:fixed;left:0;top:0;bottom:0;display:flex;flex-direction:column;height:100%;width:8rem;background:#0e1111; }
-.brand h2, .header { color:#fff; }
+.nav{ position:fixed;left:0;top:0;bottom:0;display:flex;flex-direction:column;height:100%;width:8rem;background:#0e1111; }
+.brand h2, .nav { color:#fff; }
 .brand, .navfooter { min-height:8rem; }
 .brand, .globalnav, .navfooter { display:flex;justify-content:center; }
 .globalnav { height:100%; }
 .globalnav ul { text-align:center;}
-.globalnav ul li { margin-bottom:1.6rem;font-weight:500;text-transform:uppercase;font-size:0.7rem;letter-spacing:0.12rem; }
+.globalnav ul li { margin-bottom:1.6rem;font-weight:500;text-transform:uppercase;font-size:0.7rem;letter-spacing:0.12rem;cursor:pointer; }
 .globalnav div { flex-wrap:wrap;}
 .globalnav svg { width:2.4rem;height:2.4rem;display:block;text-align:center;margin:0 auto;margin-bottom:0.6rem;}
 .globalnav span { width:100%; }

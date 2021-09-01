@@ -67,31 +67,33 @@ function AuthForm() {
 
     return(
 
-        <section>
-            <Tile>
-                <div class={classes.formwrapper}>
-                    <h2>{isLogin ? 'Login' : 'Sign-Up'}</h2>
-                    <form onSubmit={submitHandler}>
-                        <div class={classes.fieldwrapper}>
-                            <label htmlFor='email' class={classes.formlabel}>Email</label>
-                            <input type='email' id='email' required class={classes.forminput} ref={emailInputRef} />
-                        </div>
-                        <div class={classes.fieldwrapper}>
-                            <label htmlFor='password' class={classes.formlabel}>Password</label>
-                            <input type='password' id='password' required class={classes.forminput} ref={pwInputRef} />
-                        </div>
-                        <div class={classes.fieldwrapper}>
-                            <button type='submit' class={classes.formsubmit}>{isLogin ? 'Login' : 'Create Account'}</button>
-                        </div>
-                        <div class={classes.authmode}>
-                            <button type='button' className={`toggle txtbtn`} onClick={switchAuthModeHandler}>
-                                {isLogin? 'Create new Account' : 'Login with existing Account'}
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </Tile>
-        </section>
+        <div>
+            <section className={classes.loginform}>
+                <Tile>
+                    <div className={classes.formwrapper}>
+                        <h2>{isLogin ? 'Login' : 'Sign-Up'}</h2>
+                        <form onSubmit={submitHandler}>
+                            <div className={classes.fieldwrapper}>
+                                <label htmlFor='email' className={classes.formlabel}>Email</label>
+                                <input type='email' id='email' required className={classes.forminput} ref={emailInputRef} />
+                            </div>
+                            <div className={classes.fieldwrapper}>
+                                <label htmlFor='password' className={classes.formlabel}>Password</label>
+                                <input type='password' id='password' required className={classes.forminput} ref={pwInputRef} />
+                            </div>
+                            <div className={classes.fieldwrapper}>
+                                <button type='submit' class='standardbtn'>{isLogin ? 'Login' : 'Create Account'}</button>
+                            </div>
+                            <div className={classes.authmode}>
+                                <button type='button' className={`toggle txtbtn`} onClick={switchAuthModeHandler}>
+                                    {isLogin? 'Create new Account' : 'Login with existing Account'}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </Tile>
+            </section>
+        </div>
 
     )
 

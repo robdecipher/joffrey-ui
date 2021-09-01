@@ -1,0 +1,6 @@
+.formwrapper { display:flex;flex-direction:column;padding:2rem 2rem; }
+.formwrapper h2 { margin-bottom:3.1rem; }
+.fieldwrapper { flex-direction:column;align-items:flex-start;min-width:20rem;margin-bottom:2.1rem; }
+.formlabel { font-size:0.8rem;color:#000;text-transform:uppercase;letter-spacing:0.055rem;margin-bottom:1.6rem; }
+.forminput { width:100%;margin-bottom:1rem;border:0;border-bottom:1px solid #d0d0d0;padding:0.4rem 0.2rem;font-size:1rem; }
+.forminput:focus { outline:none; }

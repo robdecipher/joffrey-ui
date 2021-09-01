@@ -11,7 +11,7 @@ const category = 'category = "[WSC] Local" AND "Request Type" in ("Local Request
 const status = 'status not in (Resolved, Closed, Cancelled, LIVE, Complete)';
 const strip = 'summary !~ "global request*" AND issuetype not in ("PDP Task(automatic)")';
 const wpc = 'WPC = PL';
-const fields = 'fields=id,key,status,customfield_13611,assignee,duedate,created,summary';
+const fields = 'fields=id,key,status,customfield_13611,assignee,duedate,created,summary,reporter';
 const maxResults = 'maxResults=5000';
 
 const query = baseUrl + category + ' AND ' + status + ' AND ' + strip + ' AND ' + wpc + '&' + maxResults + '&' + fields;
@@ -22,7 +22,6 @@ const completeDate = 'resolutiondate >= startOfDay()';
 const completeFields = 'fields=id,key,status,resolutiondate';
 
 const completeQuery = baseUrl + category + ' AND ' + completeStatus + ' AND ' + strip + ' AND ' + wpc + ' AND ' + completeDate + '&' + maxResults + '&' + completeFields;
-console.log(completeQuery);
 
 export async function getAllOpenTasks() {
 
@@ -45,10 +44,30 @@ export async function getAllOpenTasks() {
             ...unpacked[key]
         });
     }
-    console.log(openTasks);
 
     return openTasks;
 
+}
+
+export async function getNewTasks() {
+
+    const allOpenTasks = await getAllOpenTasks();
+
+    const status = 'New Request';
+
+    let newTasks = allOpenTasks.filter((task) => {
+        const taskStatus = task.fields.status.name;
+        return taskStatus == status;
+    });
+
+    const reporter = 'r.cheatham@cheil.com'
+
+    let testTasks = newTasks.filter((task) => {
+        const testReporter = task.fields.reporter.emailAddress;
+        return testReporter == reporter;
+    })
+
+    return testTasks;
 }
 
 export async function getCompletedTasks() {
@@ -63,4 +82,8 @@ export async function getCompletedTasks() {
     const data = await response.json();
     return data;
 
+}
+
+export async function jiraPostHandler() {
+    
 }

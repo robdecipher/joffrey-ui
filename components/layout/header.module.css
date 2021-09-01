@@ -1,0 +1,2 @@
+.header { position:absolute;top:0;left:0;right:0;display:flex;width:100%;flex-direction:row;flex-wrap:nowrap; }
+.logoutwrap { width:auto; margin-left:auto;padding:2rem 3rem; }
